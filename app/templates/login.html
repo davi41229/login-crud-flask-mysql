@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<section class="login">
+    <h1>Login</h1>
+        <div id="img">
+            <img  src="{{ url_for('static', filename='img/img.jpg')}}">
+        </div>
+    
+    <form action="/login" method="post">
+        <label for="">E-mail</label> <br>
+        <input type="email" name="email"><br>
+        <label for="">Senha</label><br>
+        <input type="password" name="password"><br>
+        <button class="btn btn-outline-primary  type="submit"><i class="bi bi-box-arrow-in-right"></i>Logar</button>
+    </form>
+    <a class="btn btn-outline-success" href="/"><i class="bi bi-house"></i>  Home</a>
+    
+</section>
+
+{% endblock %}

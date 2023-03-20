@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="inicial">
+
+    {% if current_user.is_authenticated %}   
+        <div class="logado">
+            <h1>Bem vindo (a): {{current_user.name}}</h1> 
+            <img src=""> 
+            <p>Agora Você é membro(a)!</p>
+            <p>Obrigado por sua Inscrição!</p>
+            <p>Siga nossas redes socias!</p>
+            <ul class="sociais">
+                <li><a style="font-size:2.5rem;list-style:disc" href=""><i class="bi bi-facebook"></i></a></li>
+                <li><a style="color:purple;font-size:2.5rem;" href=""><i class="bi bi-instagram"></i></a></li>
+                <li><a class="btn btn-outline-warning" href="{{url_for('logout')}}"><i class="bi bi-box-arrow-right"></i>  Sair</a> </li>
+                <li><a  class="btn btn-outline-danger" href="/contas"><i class="bi bi-gear"></i>  Opções</a></li>   
+            </ul> 
+        </div>
+    
+    {% else %} 
+    <div class="visitante">
+        <h1>Cadastro de Usuario</h1>
+        <p>Cadastre-se já!</p>
+        <a  class="btn btn-success" href="/save"><i class="bi bi-person-plus"></i>  Cadastre-se</a><br> 
+        <a class="btn btn-success" href="/login"><i class="bi bi-person"></i>  Ja tenho cadastro</a><!-- BOTAO PARA LOGAR --> 
+
+    </div>
+
+   
+    {% endif %} 
+</main>
+
+{% endblock  %}

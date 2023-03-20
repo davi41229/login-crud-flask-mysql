@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content  %}
+
+<section class="cadastro">
+    <h1>Upload de Imagem</h1>
+    <form action="/upload" enctype="multipart/form-data" method="post">
+        <label  for="">Foto do Perfil</label>
+        <br>
+        <input type="file"  name="img" /><br>   
+        <button class="btn btn-danger"  type="submit"><i class="bi bi-person-plus"></i> subir</button>
+        <a class="btn btn-outline-success" href="/"><i class="bi bi-house"></i> Home</a>
+    </form>
+   
+</section>
+
+{% endblock  %}
+
